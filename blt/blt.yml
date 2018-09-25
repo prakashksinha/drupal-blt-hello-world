@@ -9,7 +9,10 @@ project:
     hostname: 'local.${project.machine_name}.com'
 git:
   default_branch: master
-  remotes: {  }
+  remotes: 
+    dime@svn-3239.devcloud.hosting.acquia.com:dime.git
+  hooks:
+    commit-msg: false
 deploy:
   tag_source: true
 drush:
