@@ -10,7 +10,7 @@ project:
 git:
   default_branch: master
   remotes: 
-    dime@svn-3239.devcloud.hosting.acquia.com:dime.git
+    - dime@svn-3239.devcloud.hosting.acquia.com:dime.git
   hooks:
     commit-msg: false
 deploy:
