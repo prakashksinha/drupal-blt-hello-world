@@ -1,7 +1,7 @@
 project:
   machine_name: drupal-blt-hello-world
   prefix: BLT
-  human_name: 'BLTed 8'
+  human_name: 'Drupal BLT Hello World'
   profile:
     name: lightning
   local:
