@@ -30,8 +30,8 @@ cache:
   - "$HOME/.nvm"
   - ".rules"
   # Cache front end dependencies to dramatically improve build time.
-  # - "docroot/themes/custom/mytheme/node_modules"
-  # - "docroot/themes/custom/mytheme/bower_components"
+   - "docroot/themes/custom/mytheme/node_modules"
+   - "docroot/themes/custom/mytheme/bower_components"
 
 addons:
   ssh_known_hosts:
