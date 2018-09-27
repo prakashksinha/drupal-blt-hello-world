@@ -35,7 +35,7 @@ cache:
 
 addons:
   ssh_known_hosts:
-   - svn-3239.devcloud.hosting.acquia.com:dime.git
+   - svn-3239.devcloud.hosting.acquia.com
   chrome: stable
 
 # @see https://docs.travis-ci.com/user/notifications
@@ -55,6 +55,7 @@ before_install:
 install:
   - source ${BLT_DIR}/scripts/travis/setup_environment
   - source ${BLT_DIR}/scripts/travis/setup_project
+  - echo 'KEY' >> $HOME/.ssh/known_hosts
 
 script:
   - source ${BLT_DIR}/scripts/travis/run_tests
