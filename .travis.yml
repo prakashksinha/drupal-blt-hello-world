@@ -33,6 +33,7 @@ cache:
    - "docroot/themes/custom/mytheme/node_modules"
    - "docroot/themes/custom/mytheme/bower_components"
 
+# removed the file extension
 addons:
   ssh_known_hosts:
    - svn-3239.devcloud.hosting.acquia.com
