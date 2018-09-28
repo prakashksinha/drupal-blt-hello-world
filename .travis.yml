@@ -6,7 +6,7 @@ dist: trusty
 # Making this version number greater than the production environment can have unintended consequences
 # including a non-functional prod environment.
 php:
-  - 5.1
+  - 5.6
 
 matrix:
   fast_finish: true
@@ -30,13 +30,13 @@ cache:
   - "$HOME/.nvm"
   - ".rules"
   # Cache front end dependencies to dramatically improve build time.
-   - "docroot/themes/custom/mytheme/node_modules"
-   - "docroot/themes/custom/mytheme/bower_components"
+  # - "docroot/themes/custom/mytheme/node_modules"
+  # - "docroot/themes/custom/mytheme/bower_components"
 
-# eemoved the file extension
 addons:
   ssh_known_hosts:
-   - svn-3239.devcloud.hosting.acquia.com
+  # - svn-4786.devcloud.hosting.acquia.com
+  - svn-3239.devcloud.hosting.acquia.com
   chrome: stable
 
 # @see https://docs.travis-ci.com/user/notifications
@@ -56,7 +56,6 @@ before_install:
 install:
   - source ${BLT_DIR}/scripts/travis/setup_environment
   - source ${BLT_DIR}/scripts/travis/setup_project
-  - echo 'KEY' >> $HOME/.ssh/known_hosts
 
 script:
   - source ${BLT_DIR}/scripts/travis/run_tests
@@ -68,16 +67,16 @@ deploy:
      skip_cleanup: true
      on:
        branch: develop
-       php: 7.1
+       php: 5.6
    - provider: script
      script: "${BLT_DIR}/scripts/travis/deploy_branch"
      skip_cleanup: true
      on:
        branch: master
-       php: 7.1
+       php: 5.6
    - provider: script
      script: "${BLT_DIR}/scripts/travis/deploy_tag"
      skip_cleanup: true
      on:
        tags: true
-       php: 7.1
+       php: 5.6
